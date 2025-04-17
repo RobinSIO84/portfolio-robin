@@ -4,76 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Robin</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background: #f4f4f4;
         }
+
         header {
-            background-color: #333;
+            background: #333;
             color: white;
             padding: 20px;
-            font-size: 24px;
             text-align: center;
+            font-size: 24px;
         }
-        .container {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        /* Style pour les onglets */
+
         .tabs {
             display: flex;
-            margin-bottom: 20px;
+            justify-content: center;
+            background: #222;
         }
+
         .tabs button {
-            background-color: #333;
+            flex: 1;
+            padding: 15px;
+            background: #333;
             color: white;
             border: none;
-            padding: 15px;
             cursor: pointer;
-            flex: 1;
-            text-align: center;
-            font-size: 18px;
+            font-size: 16px;
+            transition: background 0.3s;
         }
+
         .tabs button:hover {
-            background-color: #555;
+            background: #444;
         }
+
         .tabs button.active {
-            background-color: #007bff;
+            background: #007bff;
         }
+
         .tab-content {
             display: none;
             padding: 20px;
             background: white;
+            max-width: 1000px;
+            margin: 20px auto;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
+
         .tab-content.active {
             display: block;
         }
-        .task-list ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        .task-list li {
-            margin: 10px 0;
-            font-size: 18px;
-        }
-        .tech-trends {
-            font-size: 18px;
-            color: #555;
-        }
+
         img {
             max-width: 90%;
-            height: auto;
             margin-top: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        ul {
+            text-align: left;
         }
     </style>
 </head>
@@ -81,64 +74,63 @@
 
 <header>Portfolio - Robin</header>
 
-<div class="container">
-    <!-- Onglets -->
-    <div class="tabs">
-        <button class="tab-button active" onclick="openTab(event, 'entreprise')">Présentation de l'entreprise</button>
-        <button class="tab-button" onclick="openTab(event, 'tech')">Veille Technologique</button>
-        <button class="tab-button" onclick="openTab(event, 'taches')">Tâches Récurrentes</button>
-        <button class="tab-button" onclick="openTab(event, 'cv')">Mon CV</button>
-    </div>
+<div class="tabs">
+    <button class="tab-button active" data-tab="entreprise">Présentation de l'entreprise</button>
+    <button class="tab-button" data-tab="tech">Veille Technologique</button>
+    <button class="tab-button" data-tab="taches">Tâches Récurrentes</button>
+    <button class="tab-button" data-tab="cv">Mon CV</button>
+</div>
 
-    <!-- Contenu des onglets -->
-    <div id="entreprise" class="tab-content active">
-        <h2>Présentation de mon entreprise</h2>
-        <p>Je travaille actuellement chez <strong>ArcelorMittal Fos-sur-Mer</strong>, leader mondial dans la production d'acier. L'entreprise est spécialisée dans la fabrication de produits longs et plats, principalement utilisés dans les secteurs de l'automobile, de la construction et des infrastructures.</p>
-        <p>Notre site de Fos-sur-Mer est un site stratégique pour la production et la distribution de produits en acier en Europe et dans le monde entier.</p>
-    </div>
+<div id="entreprise" class="tab-content active">
+    <h2>Présentation de mon entreprise</h2>
+    <p>Je travaille chez <strong>ArcelorMittal Fos-sur-Mer</strong>, une filiale du groupe mondial ArcelorMittal, leader mondial de la production d'acier. Le site de Fos-sur-Mer, situé près de Marseille, joue un rôle stratégique dans l’approvisionnement de l’acier pour divers secteurs industriels tels que l’automobile, la construction, l’énergie et les biens de consommation.</p>
+    <p>Le site est une véritable usine intégrée : il comprend un port autonome pour recevoir les matières premières, des hauts-fourneaux, des convertisseurs, des laminoirs et un service logistique complet pour l'expédition. Il produit principalement de l’acier plat sous forme de bobines. La capacité annuelle dépasse plusieurs millions de tonnes.</p>
+    <p>ArcelorMittal Fos est également engagé dans des démarches environnementales et technologiques. Le site investit dans des technologies de réduction des émissions de CO2, la valorisation énergétique et l’automatisation des processus industriels. Cela se traduit par des projets de modernisation continue de ses infrastructures, intégrant la transformation digitale et les outils de supervision industrielle.</p>
+    <p>Mon rôle s’inscrit dans cette logique de modernisation : je fais partie du service informatique et télécom, qui garantit la disponibilité des équipements réseaux, des postes utilisateurs, des systèmes de communication et des serveurs industriels.</p>
+</div>
 
-    <div id="tech" class="tab-content">
-        <h2>Veille Technologique : Décablage du Réseau Cuivré de Orange</h2>
-        <p class="tech-trends">Le décablage du réseau cuivré d'Orange pour le remplacer par de la fibre optique est un projet ambitieux pour moderniser les infrastructures de télécommunications en France. Ce changement est nécessaire pour offrir des débits internet beaucoup plus rapides, adaptés aux besoins de plus en plus élevés en matière de communication et de données.</p>
-        <p class="tech-trends">Le remplacement du cuivre par la fibre permettra à Orange de proposer des connexions plus stables et plus rapides. Cela contribuera également à l’optimisation du réseau, avec une réduction des coûts d'entretien du cuivre.</p>
-    </div>
+<div id="tech" class="tab-content">
+    <h2>Veille Technologique</h2>
+    <p>Ma veille technologique porte sur le <strong>remplacement progressif du réseau cuivre par la fibre optique</strong> en France, piloté principalement par Orange.</p>
+    <p>Le réseau cuivre, historiquement utilisé pour la téléphonie et l’ADSL, est en voie d'extinction. Orange a démarré un plan de fermeture progressive des lignes ADSL, avec un objectif de déconnexion totale du cuivre d'ici 2030. Ce processus, déjà engagé, concerne toutes les entreprises et particuliers, qui devront migrer vers la fibre.</p>
+    <p>Les avantages de la fibre sont nombreux : débit nettement plus élevé (jusqu’à 1 Gbit/s ou plus), faible latence, fiabilité accrue, coûts de maintenance réduits et meilleur rendement énergétique. Cette évolution nécessite néanmoins une refonte des infrastructures internes pour les entreprises : audit du câblage, mise à jour des routeurs/switches, compatibilité des systèmes télécoms, etc.</p>
+    <p>Chez ArcelorMittal, cette transition implique une étroite coordination entre les équipes informatiques, télécoms et de production. Il faut garantir que les nouveaux accès Internet ou interconnexions via fibre soient compatibles avec les systèmes industriels critiques, sans impact sur la production ou la sécurité.</p>
+    <p>Ce sujet de veille est donc essentiel pour anticiper les évolutions du réseau, planifier les budgets, former les utilisateurs et assurer une migration sans interruption de service.</p>
+</div>
 
-    <div id="taches" class="tab-content">
-        <h2>Mes Tâches Récurrentes</h2>
-        <ul class="task-list">
-            <li><strong>Gestion des réseaux et de l'infrastructure informatique :</strong> Surveillance, optimisation et maintenance des réseaux internes de l'entreprise.</li>
-            <li><strong>Support technique et assistance :</strong> Fournir un support technique aux utilisateurs internes, résoudre les problèmes techniques et effectuer des interventions de dépannage.</li>
-            <li><strong>Veille technologique :</strong> Recherche continue sur les nouvelles tendances technologiques et leur intégration dans les infrastructures existantes.</li>
-            <li><strong>Gestion des projets de virtualisation :</strong> Mise en place et gestion de solutions de virtualisation pour optimiser les ressources informatiques.</li>
-            <li><strong>Création et gestion de scripts automatisés :</strong> Développement de scripts pour l'automatisation des tâches récurrentes et la gestion des systèmes informatiques.</li>
-        </ul>
-    </div>
+<div id="taches" class="tab-content">
+    <h2>Tâches Récurrentes</h2>
+    <ul>
+        <li>🔍 <strong>Supervision réseau</strong> avec l’outil <em>What's Up Gold (WUG)</em>, qui récupère l'état de santé et de disponibilité des équipements réseau.</li>
+        <li>🛠 <strong>Maintenance terrain</strong> : je suis amené à intervenir physiquement sur les installations en cas de panne. Mes différentes habilitations (travaux en hauteur, espace confiné, port du détecteur de gaz, habilitation électrique H0B0, masque ventilé) me permettent d’accéder à toutes les zones de l’usine.</li>
+        <li>💻 <strong>Maintenance informatique</strong> : diagnostic, réparation, remplacement de composants ou d’unités complètes, installation et configuration de nouveaux postes clients.</li>
+        <li>📦 <strong>Commande d’équipements</strong> et <strong>gestion du stock</strong> informatique (pièces détachées, périphériques, câbles, etc.).</li>
+        <li>📞 <strong>Téléphonie IP</strong> : participation à la gestion du parc téléphonique (observation, mise en place de postes, dépannage léger).</li>
+        <li>🖨 <strong>Préparation et configuration</strong> d’imprimantes, de switches, de serveurs et de modules industriels type MICE, en lien avec les projets en cours.</li>
+    </ul>
+</div>
 
-    <div id="cv" class="tab-content">
-        <h2>Mon CV</h2>
-        <p>Voici mon CV en image :</p>
-        <img src="cv_page1.jpg" alt="Page 1 de mon CV">
-        <img src="cv_page2.jpg" alt="Page 2 de mon CV">
-    </div>
+<div id="cv" class="tab-content">
+    <h2>Mon CV</h2>
+    <p>Voici mon CV en format image :</p>
+    <img src="cv_page1.jpg" alt="Page 1 de mon CV">
 </div>
 
 <script>
-    function openTab(evt, tabName) {
-        var i, tabcontent, tabbuttons;
-        
-        tabcontent = document.getElementsByClassName("tab-content");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].classList.remove("active");
-        }
+    document.addEventListener('DOMContentLoaded', function () {
+        const buttons = document.querySelectorAll('.tab-button');
+        const tabs = document.querySelectorAll('.tab-content');
 
-        tabbuttons = document.getElementsByClassName("tab-button");
-        for (i = 0; i < tabbuttons.length; i++) {
-            tabbuttons[i].classList.remove("active");
-        }
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                buttons.forEach(btn => btn.classList.remove('active'));
+                tabs.forEach(tab => tab.classList.remove('active'));
 
-        document.getElementById(tabName).classList.add("active");
-        evt.currentTarget.classList.add("active");
-    }
+                button.classList.add('active');
+                document.getElementById(button.dataset.tab).classList.add('active');
+            });
+        });
+    });
 </script>
 
 </body>
