@@ -4,76 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Robin</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background: #f4f4f4;
         }
+
         header {
-            background-color: #333;
+            background: #333;
             color: white;
             padding: 20px;
-            font-size: 24px;
             text-align: center;
+            font-size: 24px;
         }
-        .container {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        /* Style pour les onglets */
+
         .tabs {
             display: flex;
-            margin-bottom: 20px;
+            justify-content: center;
+            background: #222;
         }
+
         .tabs button {
-            background-color: #333;
+            flex: 1;
+            padding: 15px;
+            background: #333;
             color: white;
             border: none;
-            padding: 15px;
             cursor: pointer;
-            flex: 1;
-            text-align: center;
-            font-size: 18px;
+            font-size: 16px;
+            transition: background 0.3s;
         }
+
         .tabs button:hover {
-            background-color: #555;
+            background: #444;
         }
+
         .tabs button.active {
-            background-color: #007bff;
+            background: #007bff;
         }
+
         .tab-content {
             display: none;
             padding: 20px;
             background: white;
+            max-width: 1000px;
+            margin: 20px auto;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
+
         .tab-content.active {
             display: block;
         }
-        .task-list ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        .task-list li {
-            margin: 10px 0;
-            font-size: 18px;
-        }
-        .tech-trends {
-            font-size: 18px;
-            color: #555;
-        }
+
         img {
             max-width: 90%;
-            height: auto;
             margin-top: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        ul {
+            text-align: left;
         }
     </style>
 </head>
@@ -81,15 +74,58 @@
 
 <header>Portfolio - Robin</header>
 
-<div class="container">
-    <!-- Onglets -->
-    <div class="tabs">
-        <button class="tab-button active" onclick="openTab(event, 'entreprise')">Présentation de l'entreprise</button>
-        <button class="tab-button" onclick="openTab(event, 'tech')">Veille Technologique</button>
-        <button class="tab-button" onclick="openTab(event, 'taches')">Tâches Récurrentes</button>
-        <button class="tab-button" onclick="openTab(event, 'cv')">Mon CV</button>
-    </div>
+<div class="tabs">
+    <button class="tab-button active" data-tab="entreprise">Présentation de l'entreprise</button>
+    <button class="tab-button" data-tab="tech">Veille Technologique</button>
+    <button class="tab-button" data-tab="taches">Tâches Récurrentes</button>
+    <button class="tab-button" data-tab="cv">Mon CV</button>
+</div>
 
-    <!-- Contenu des onglets -->
-    <div id="entreprise" class="tab-content active">
-        <h2>
+<div id="entreprise" class="tab-content active">
+    <h2>Présentation de mon entreprise</h2>
+    <p>Je travaille chez <strong>ArcelorMittal Fos-sur-Mer</strong>, un acteur majeur dans la production d'acier. Le site est essentiel pour la distribution de produits en acier en Europe, avec des applications dans l'automobile, la construction et plus encore.</p>
+</div>
+
+<div id="tech" class="tab-content">
+    <h2>Veille Technologique</h2>
+    <p>Orange a lancé un grand plan de <strong>décablage du réseau cuivré</strong> afin de le remplacer entièrement par la fibre optique. Cela vise à améliorer la qualité des connexions, la vitesse, et à moderniser les infrastructures.</p>
+</div>
+
+<div id="taches" class="tab-content">
+    <h2>Tâches Récurrentes</h2>
+    <ul>
+        <li>🔧 Support aux utilisateurs</li>
+        <li>🖧 Maintenance réseau et câblage</li>
+        <li>📦 Gestion du matériel</li>
+        <li>💾 Sauvegarde et restauration</li>
+        <li>🔐 Sécurité et mises à jour</li>
+    </ul>
+</div>
+
+<div id="cv" class="tab-content">
+    <h2>Mon CV</h2>
+    <p>Voici mon CV :</p>
+    <img src="cv_page1.jpg" alt="Page 1 de mon CV">
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const buttons = document.querySelectorAll('.tab-button');
+        const tabs = document.querySelectorAll('.tab-content');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active from all
+                buttons.forEach(btn => btn.classList.remove('active'));
+                tabs.forEach(tab => tab.classList.remove('active'));
+
+                // Add to clicked
+                button.classList.add('active');
+                document.getElementById(button.dataset.tab).classList.add('active');
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
