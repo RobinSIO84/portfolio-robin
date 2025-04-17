@@ -25,22 +25,36 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-        .section {
-            margin: 20px 0;
+        /* Style pour les onglets */
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .tabs button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            flex: 1;
+            text-align: center;
+            font-size: 18px;
+        }
+        .tabs button:hover {
+            background-color: #555;
+        }
+        .tabs button.active {
+            background-color: #007bff;
+        }
+        .tab-content {
+            display: none;
             padding: 20px;
             background: white;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        h2 {
-            color: #333;
-        }
-        img {
-            max-width: 90%;
-            height: auto;
-            margin-top: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        .tab-content.active {
+            display: block;
         }
         .task-list ul {
             list-style-type: none;
@@ -54,6 +68,13 @@
             font-size: 18px;
             color: #555;
         }
+        img {
+            max-width: 90%;
+            height: auto;
+            margin-top: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
@@ -61,43 +82,14 @@
 <header>Portfolio - Robin</header>
 
 <div class="container">
-
-    <!-- Présentation de l'entreprise -->
-    <div class="section">
-        <h2>Présentation de mon entreprise</h2>
-        <p>Je travaille actuellement chez <strong>ArcelorMittal Fos-sur-Mer</strong>, leader mondial dans la production d'acier. L'entreprise est spécialisée dans la fabrication de produits longs et plats, principalement utilisés dans les secteurs de l'automobile, de la construction et des infrastructures.</p>
-        <p>Notre site de Fos-sur-Mer est un site stratégique pour la production et la distribution de produits en acier en Europe et dans le monde entier.</p>
+    <!-- Onglets -->
+    <div class="tabs">
+        <button class="tab-button active" onclick="openTab(event, 'entreprise')">Présentation de l'entreprise</button>
+        <button class="tab-button" onclick="openTab(event, 'tech')">Veille Technologique</button>
+        <button class="tab-button" onclick="openTab(event, 'taches')">Tâches Récurrentes</button>
+        <button class="tab-button" onclick="openTab(event, 'cv')">Mon CV</button>
     </div>
 
-    <!-- Veille technologique -->
-    <div class="section">
-        <h2>Veille Technologique : Décablage du Réseau Cuivré de Orange</h2>
-        <p class="tech-trends">Le décablage du réseau cuivré d'Orange pour le remplacer par de la fibre optique est un projet ambitieux pour moderniser les infrastructures de télécommunications en France. Ce changement est nécessaire pour offrir des débits internet beaucoup plus rapides, adaptés aux besoins de plus en plus élevés en matière de communication et de données.</p>
-        <p class="tech-trends">Le remplacement du cuivre par la fibre permettra à Orange de proposer des connexions plus stables et plus rapides. Cela contribuera également à l’optimisation du réseau, avec une réduction des coûts d'entretien du cuivre.</p>
-    </div>
-
-    <!-- Tâches récurrentes -->
-    <div class="section task-list">
-        <h2>Mes Tâches Récurrentes</h2>
-        <ul>
-            <li><strong>Gestion des réseaux et de l'infrastructure informatique :</strong> Surveillance, optimisation et maintenance des réseaux internes de l'entreprise.</li>
-            <li><strong>Support technique et assistance :</strong> Fournir un support technique aux utilisateurs internes, résoudre les problèmes techniques et effectuer des interventions de dépannage.</li>
-            <li><strong>Veille technologique :</strong> Recherche continue sur les nouvelles tendances technologiques et leur intégration dans les infrastructures existantes.</li>
-            <li><strong>Gestion des projets de virtualisation :</strong> Mise en place et gestion de solutions de virtualisation pour optimiser les ressources informatiques.</li>
-            <li><strong>Création et gestion de scripts automatisés :</strong> Développement de scripts pour l'automatisation des tâches récurrentes et la gestion des systèmes informatiques.</li>
-        </ul>
-    </div>
-
-    <!-- Mon CV -->
-    <div class="section">
-        <h2>Mon CV</h2>
-        <p>Voici mon CV en image :</p>
-        <img src="cv_page1.jpg" alt="Page 1 de mon CV">
-        <img src="cv_page2.jpg" alt="Page 2 de mon CV">
-        <!-- Ajoute d'autres images si ton CV a plusieurs pages -->
-    </div>
-
-</div>
-
-</body>
-</html>
+    <!-- Contenu des onglets -->
+    <div id="entreprise" class="tab-content active">
+        <h2>
