@@ -1,41 +1,126 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+/* --- GLOBAL --- */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-header, nav, footer {
-  background-color: #1e3a8a;
-  color: white;
-  padding: 15px;
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  padding: 20px;
+  line-height: 1.6;
 }
 
-h1, h2, h3 {
-  color: #1e3a8a;
+/* --- HEADER --- */
+header {
+  padding: 25px;
+  text-align: center;
+}
+
+header h1 {
+  color: #F04E23; /* Orange ArcelorMittal */
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+header p {
+  color: #444;
+  font-size: 1.1rem;
+}
+
+/* --- TAB BUTTONS --- */
+.tab-container {
+  display: flex;
+  gap: 10px;
+  margin: 25px auto;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .tab {
-  background-color: #dbeafe;
-  border: none;
-  padding: 10px 20px;
+  padding: 12px 22px;
+  border-radius: 6px;
+  border: 2px solid #F04E23;
+  background: white;
+  color: #F04E23;
   cursor: pointer;
-  margin-right: 5px;
-  border-radius: 5px;
+  font-weight: 600;
+  transition: 0.25s;
 }
 
 .tab:hover {
-  background-color: #bfdbfe;
+  background: #F04E23;
+  color: white;
 }
 
 .tab.active {
-  background-color: #93c5fd;
-  font-weight: bold;
+  background: #F04E23;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(240, 78, 35, 0.3);
 }
 
+/* --- CONTENT BOXES --- */
 .content-section {
-  padding: 20px;
-  background: white;
+  display: none;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 10px;
+  margin-top: 20px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+
+  /* Professional shadow */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.content-section.active {
+  display: block;
+}
+
+/* --- TITLES --- */
+.content-section h2 {
+  color: #F04E23;
+  border-left: 5px solid #F04E23;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+/* --- LISTS --- */
+ul {
   margin-top: 10px;
-  border-radius: 8px;
+  margin-left: 20px;
+}
+
+ul li {
+  padding: 5px 0;
+}
+
+/* --- CV IMAGE STYLE --- */
+.cv-container {
+  text-align: center;
+}
+
+.cv-container img {
+  max-width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+  margin-top: 20px;
+  transition: 0.3s ease;
+}
+
+.cv-container img:hover {
+  transform: scale(1.02);
+}
+
+/* --- FOOTER --- */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
 }
