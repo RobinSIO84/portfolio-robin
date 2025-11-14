@@ -1,0 +1,41 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+header, nav, footer {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 15px;
+}
+
+h1, h2, h3 {
+  color: #1e3a8a;
+}
+
+.tab {
+  background-color: #dbeafe;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+
+.tab:hover {
+  background-color: #bfdbfe;
+}
+
+.tab.active {
+  background-color: #93c5fd;
+  font-weight: bold;
+}
+
+.content-section {
+  padding: 20px;
+  background: white;
+  margin-top: 10px;
+  border-radius: 8px;
+}
