@@ -32,7 +32,7 @@ header {
 }
 
 .tabs button:hover {
-    background: #444;
+    background: #FF6F00;
 }
 
 .tabs button.active {
